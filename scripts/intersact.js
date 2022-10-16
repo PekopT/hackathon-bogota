@@ -7,7 +7,7 @@ const { abi } = JSON.parse(fs.readFileSync('../build/contracts/HelloWorld.json')
 var Contract = require('web3-eth-contract');
 
 // set provider for all later instances to use
-Contract.setProvider('https://nd-934-738-609.p2pify.com/57e6666822a12f2ffb05a27ae563bac2');
+Contract.setProvider('https://alpha-fittest-hexagon.arbitrum-goerli.quiknode.pro/6cc579fc1022a906f03687720d32f28f7ed7edc1/');
 
 var contract = new Contract(abi, CONTRACT_ADDRESS);
 
