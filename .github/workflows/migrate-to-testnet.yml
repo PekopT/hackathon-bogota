@@ -22,20 +22,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v32
-
-      - name: Mythril run all changed files
+      - name: Mythril run all SOL files
         shell: bash
         run: |
           #!/bin/bash
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            EXTENSION=${file##*.}
-            if [ "${EXTENSION}" == sol ]; then
-              echo "$file is changed SOL";
-              myth analyze ${file};
-            fi
+          for file in `find contracts -name "*.sol"`; do
+            echo "$file is SOL";
+            myth analyze ${file};
           done
 
   build-push:
