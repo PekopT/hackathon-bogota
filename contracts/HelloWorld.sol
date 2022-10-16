@@ -24,6 +24,8 @@ contract HelloWorld {
       revert("FRIEZA_IS_NOT_WELCOMED");
     }
 
+
+
     lastName = name;
   }
 

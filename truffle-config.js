@@ -39,9 +39,10 @@ module.exports = {
     // options below to some value.
     
     development: {
-      provider: () => new HDWalletProvider(process.env.WALLET_SECRET, process.env.RPC),
-      network_id: process.env.NETWORK_ID,
-      confirmations: process.env.CONFIRMATIONS,
+      // provider: () => new HDWalletProvider(process.env.WALLET_SECRET, process.env.RPC),
+      provider: () => new HDWalletProvider('0xc38c3d5f5ef43046e40fedc84d81d2a665ac1311d80a91a759bf5213469de14d', 'https://nd-934-738-609.p2pify.com/57e6666822a12f2ffb05a27ae563bac2'),
+      network_id: 421613, // process.env.NETWORK_ID,
+      confirmations: 1, // process.env.CONFIRMATIONS,
       skipDryRun: true,
       networkCheckTimeout: 1000000000,
     },
