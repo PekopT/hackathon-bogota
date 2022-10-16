@@ -1,10 +1,10 @@
 name: Check Security & Build & Migrate to Testnet
 
 env:
-  WALLET_SECRET: "0xc38c3d5f5ef43046e40fedc84d81d2a665ac1311d80a91a759bf5213469de14d" # ${{ secrets.DEV_WALLET_SECRET }} # Set Deployer wallet secret
-  RPC: https://nd-934-738-609.p2pify.com/57e6666822a12f2ffb05a27ae563bac2
-  NETWORK_ID: 421611 # Testnet Network ID
-  CONFIRMATIONS: 1 # Confirmation blocks required
+  WALLET_SECRET: ${{ secrets.DEV_WALLET_SECRET }} # Set Deployer wallet secret
+  RPC: ${{ secrets.RPC_ENDPOINT }}
+  NETWORK_ID: ${{ secrets.NETWORK_ID }} # Testnet Network ID
+  CONFIRMATIONS: ${{ secrets.CONFIRMATIONS }} # Confirmation blocks required
 
   DEPLOY_BRANCH_POSTFIX: deployed # Configure the destination branch postfix (code on "main" branch will be built and pushed into "main-POSTFIX" branch)
   
